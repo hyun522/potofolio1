@@ -1,0 +1,40 @@
+/* 로그인 text */
+#container { display:flex; justify-content:center;}
+#container .c1 { width:700px; font-size:18px;}
+#container .c1 .c1_top { position:relative; }
+#container .c1 .c1_top div { text-align:center; font-size:20px; padding:20px 0; font-weight:600; color: #252525;}
+#container .c1 .c1_top a img { position:absolute;  top:50%; right:0; transform:translateY(-50%); width:20px; }
+/* #container */
+/* top text 입력 */
+#container .c1 .c1_bot .c1_bot_center .c1_bot_topText { width:370px; margin:30px auto; text-align:center;
+    line-height:30px; font-weight:bold; font-size:25px;}
+/* 아이디 비번 입력 */
+#container .c1 .c1_bot .login_form { margin-top:40px;}
+#container .c1 .c1_bot .login_form input { display:block; width:680px; height:60px; font-size:18px;
+    border:1px solid #ccc; border-radius:10px;  padding:0 10px; margin-bottom:25px; }
+#container .c1 .c1_bot .login_form  div { position:relative;}
+#container .c1 .c1_bot .login_form .c1_del {  background-image:url(/img/join-log/join-log_img2.png);
+    background-repeat:no-repeat; background-size:cover;  width:20px;  height:20px; position:absolute;
+    top:50%; right:10px;transform:translateY(-50%);border:none; cursor:pointer;}
+/* foucus */
+#container .c1 .c1_bot .login_form input:focus { outline:3px dotted blue; }
+/* hover */
+#container .c1 .c1_bot .login_form input:hover { border:1px solid #999;  cursor: pointer; }
+/* 로그인 버튼 */
+#container .c1 .c1_bot .c1_bot_center .login_form .c1_log { width:100%; border:none; height:60px; cursor:not-allowed; 
+    font-size:18px; font-weight:bold; color:#c6c6c6; border-radius:10px; margin-top:30px;}
+/* 아이콘 찾기 */
+#container .c1 .c1_bot .c1_bot_center .c1_icon_log { display:flex; justify-content:space-between;  padding:20px 70px ; margin-top:40px;}
+#container .c1 .c1_bot .c1_bot_center .c1_icon_log li { display:flex; text-align:center;}
+#container .c1 .c1_bot .c1_bot_center .c1_icon_log li a { color:#000; padding:0 20px; }
+#container .c1 .c1_bot .c1_bot_center .c1_icon_log li a img {  width:50px; margin-bottom:15px; }
+/* 아이디 찾기 */
+#container .c1 .c1_bot .c1_bot_center .c1_bot_find { display:flex; justify-content:center; margin:60px 0; }
+#container .c1 .c1_bot .c1_bot_center .c1_bot_find li:nth-child(1)::after,
+#container .c1 .c1_bot .c1_bot_center .c1_bot_find li:nth-child(2)::after { content:""; display:inline-block;
+     width:1px; height:15px; background-color:#898989; }
+#container .c1 .c1_bot .c1_bot_center .c1_bot_find li a {color:#898989; margin:0 10px; }
+/* 회원가입 이동 */
+#container .c1 .c1_bot .goJoin {  display:flex; justify-content:space-between;
+     color:#000; padding:18px 30px; border-radius:10px; border:1px solid #d3d3d3;  }  
+#container .c1 .c1_bot .goJoin img { width:10px; margin-left:10px; }

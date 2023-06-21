@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- css 연결 -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div id="container">
+        <div class="c1">
+            <div class="c1_top">
+                <div>
+                    <p>로그인</p>
+                </div>
+                <a href="#"><img src="/img/join-log/join-log_img1.png" /></a>
+            </div>
+            <div class="c1_bot">
+                <div class="c1_bot_center">
+                    <div class="c1_bot_topText">
+                        에프터블로우 뷰티 포인트 통합회원 아이디로 로그인해주세요.
+                    </div>
+                    <form id ="login_form" class="login_form" action="/logincheck" method="post"> 
+                        <div>
+                            <input  type="text" name="memberid" placeholder="아이디를 입력해 주세요" >
+                            <button class="c1_del"></button>
+                        </div>
+                        <div>
+                            <input type="password" name="memberpass" placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)">
+                            <button class="c1_del"></button>
+                        </div>
+                        <button class="c1_log" type="submit">로그인</button>
+                    </form>
+                    <ul class="c1_icon_log">
+                        <li><a href="#"><img src="/img/join-log/join-log_img3.png"><p>휴대폰<br /> 로그인</p></a></li>
+                        <li><a href="#"><img src="/img/join-log/join-log_img4.png"><p>카카오<br /> 로그인</p></a></li>
+                        <li><a href="#"><img src="/img/join-log/join-log_img5.png"><p>네이버<br /> 로그인</p></a></li>
+                        <li><a href="#"><img src="/img/join-log/join-log_img6.png"><p>더보기</p></a></li>
+                    </ul>
+                    <ul class="c1_bot_find" >
+                        <li><a href="#">아이디 찾기</a></li>
+                        <li><a href="#">비밀번호 찾기</a></li>
+                        <li><a href="#">비회원 주문/조회</a></li>
+                    </ul>
+                    <a class="goJoin" href="/join">
+                        <span>아직회원이 아니세요?</span>
+                        <span>회원가입<img src="/img/join-log/join-log_img7.png"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

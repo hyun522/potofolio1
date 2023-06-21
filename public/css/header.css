@@ -1,0 +1,98 @@
+/* slider 구간 이미지 */
+#header { overflow:hidden;}
+.h_slider { width:100vw; height:42px; 
+                overflow:hidden;
+            } 
+.h_slider .wrap { height:90px; transition:all .5s; }
+.h_slider .wrap > a > img { width:100vw; height:42px;}
+
+/* 메인메뉴 구간  */
+.h_mainGnb { display:flex; justify-content:center; 
+position:fixed; width:100%;
+z-index:10; border-bottom:1px solid #000;
+}
+  
+.h_mainGnb .h1_center { display:flex; justify-content:space-between; align-items:center;
+     width:1200px; }
+
+/* depth1메뉴 구간 */
+.h_mainGnb .h1_center .depth1 { display:flex;  }
+.h_mainGnb .h1_center .depth1 > li > a { display:block; padding:30px 25px; color:#000;}
+.h_mainGnb .h1_center .h1_center_icon > a  { margin-left:10px; color:#000; }
+  
+  /* deth2메뉴 구간 */
+.d2 {
+  width:100vw;
+  height:0px;
+  position:absolute;
+  left:0;
+  top:76px;
+  display:flex;
+  background-color:#fff;
+  overflow: hidden;
+}
+.d2 .d2_center { width:1200px; margin:0 auto; display:none; }
+.d2 .d2_center .depth2 { width:400px; display:flex; margin:0 auto; line-height:80px; }
+.d2 .d2_center .depth2 li { margin:0 10px; }
+.d2 .d2_center  .depth2 li a {  color:#000; text-align:center;}
+  
+/* h_mainGnb에 on 붙었을때 */
+.h_mainGnb.on { background-color:#fff;  top:0; left:0; }
+.h_mainGnb.on .h1_center .depth1 {color:#000; background-color:#fff;}
+.h_mainGnb.on .h1_center .depth1 > li > a {color:#000;}
+.h_mainGnb.on .h1_center .h1_center_icon > a { color:#000;}
+  
+/* h_mainGnb에 hover 붙었을때 */
+.h_mainGnb:hover { background-color:#fff; }
+.h_mainGnb:hover .h1_center .depth1 > li > a {color:#000;}
+.h_mainGnb:hover .h1_center .h1_center_icon > a { color:#000;}
+
+
+
+/* 반응형 */
+@media screen and (max-width:1000px) { 
+  .h_slider .wrap { height:90px; transition:all .5s; }
+  .h_slider .wrap > a > img { width:100vw; height:42px;}
+  
+  /* 메인메뉴 구간  */
+  .h_mainGnb { background-color:#fff; display:flex; justify-content:center;position:fixed; width:100%; z-index:10; border-bottom:1px solid #fff;}
+  .h_mainGnb .h1_center { width:83%;  display:flex; justify-content:space-between; align-items:center;flex-wrap: wrap;}
+  .h_mainGnb .h1_center h1 a {  margin:20px 0; display:block; width:226px; height:40px; background-image:url(/img/header/logo_white.png);}
+  
+  /* depth1메뉴 구간 */
+  .h_mainGnb .h1_center .depth1 { display:flex;  margin-left:30%; }
+  .h_mainGnb .h1_center .depth1 > li > a { display:block; width:80px; padding:30px 0px; color:#000; text-align:center;}
+  .h_mainGnb .h1_center .depth1 > li:nth-child(1) { margin-right:10px;}
+  .h_mainGnb .h1_center .h1_center_icon { width:110px; margin-left:83%; color:#000; justify-content:flex-end; }
+  .h_mainGnb .h1_center .h1_center_icon a  { margin-left:10px; padding:30px 0px; }
+  .h_mainGnb .h1_center .h1_center_icon > i:nth-child(4) { display:none;}
+    
+  /* deth2메뉴 구간 */
+  .d2 { display:none; }
+
+}
+
+@media screen and (max-width:640px) { 
+  .h_slider { width:100vw; height:42px; overflow:hidden;} 
+  .h_slider .wrap { height:90px; transition:all .5s; }
+  .h_slider .wrap > a > img { width:100vw; height:42px;}
+  
+  /* 메인메뉴 구간  */
+  .h_mainGnb {  background-color:#fff; display:flex; justify-content:center; 
+  position:fixed; width:100%; 
+  z-index:10; border-bottom:1px solid #fff;}
+  .h_mainGnb .h1_center { width:83%;  display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap;}
+  .h_mainGnb .h1_center h1 a {margin:20px 0; display:block; width:226px; height:40px; background-image:url(/img/header/logo_white.png);}
+  
+  /* depth1메뉴 구간 */
+  .h_mainGnb .h1_center { width:90%;}
+  .h_mainGnb .h1_center .depth1 { display:flex;  margin-left:10%; }
+  .h_mainGnb .h1_center .depth1 > li > a { text-align:center; display:block; padding:15px 0px; width:80px; color:#000;}
+  .h_mainGnb .h1_center .depth1 > li:nth-child(1) { margin-right:10px;}
+  .h_mainGnb .h1_center .h1_center_icon { margin-left:80%; color:#000; justify-content:flex-end; }
+  .h_mainGnb .h1_center .h1_center_icon > i { margin-left:10px; padding:30px 0px; }
+  .h_mainGnb .h1_center .h1_center_icon > i:nth-child(4) { display:none;}
+    
+  /* deth2메뉴 구간 */
+  .d2 { display:none;}
+  }  

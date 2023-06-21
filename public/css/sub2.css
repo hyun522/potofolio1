@@ -1,0 +1,43 @@
+/* container */
+/* c1 */
+.c1 { padding-top:77px; 
+  display: flex;
+}
+.c1 .c1_left { width:33.333333%;}
+.c1 .c1_left .c1_left_box_top { padding:0 32px; border-bottom:1px solid #999;}
+.c1 .c1_left .c1_left_box_top .c1_left_topBox { color:#333; font-size:12px; margin:60px 0 36px  ; }
+.c1 .c1_left .c1_left_box_top .c1_left_centBox { position: relative;}
+.c1 .c1_left .c1_left_box_top .c1_left_centBox .search {  display:block; 
+  width:100%; 
+  padding:15px 10px 15px 40px; 
+  border-radius:10px;
+  border:1px solid #000; outline:none;
+  font-size:18px;
+  color:#000;}
+.c1 .c1_left .c1_left_box_top .c1_left_centBox i { position:absolute; top:18px; left:10px;}
+.c1 .c1_left .c1_left_botBox { display:flex; justify-content:space-between; margin:16px 0; align-items:center; }
+.c1 .c1_left .c1_left_botBox p { font-size:14px; color:#777;  }
+.c1 .c1_left .c1_left_botBox button { width:100px; height:40px; border:1.5px solid #999; border-radius:20px; 
+              background-color:transparent; color:#000; font-size:14px; font-weight:bold; cursor: pointer;}
+.c1 .c1_left .c1_left_box_bot .c1_right_conts { height:100%; overflow-y:scroll; height:48vh; }
+.c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_right_cont { padding:40px 24px 40px 24px; color:#444; border-bottom:1px solid #999; }
+.c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_right_cont h3 { color:#333; font-size:18px;}
+.c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_right_cont p { margin:15px 0 10px;  }
+.c1 .c1_left .c1_left_box_bot .c1_right_contAll { padding:16px 24px 16px 24px; color:#777; text-decoration:underline; font-weight:bold;  border-top:1px solid #999; }
+.c1 .c1_left .c1_left_box_bot .c1_right_contAll > a {  color:#333; text-decoration:underline; font-weight:bold;}
+.c1 .c1_right { width:66.666666%; overflow:hidden;}
+
+/* 반응형 */
+@media screen and (max-width:1000px) { 
+  .c1 .c1_left { width:50%;} 
+  .c1 .c1_left .c1_left_box_top .c1_left_topBox { margin:110px 0 36px; }
+}
+
+
+@media screen and (max-width:640px) { 
+  .c1 .c1_left { width:100%;} 
+  .c1 .c1_left .c1_left_box_top .c1_left_topBox { margin:110px 0 36px;}
+  .c1 .c1_left .c1_left_box_bot .c1_right_conts {  overflow-y:hidden; height:0vh; height:100%;}
+  .c1 .c1_right { display:none;}
+}  
+

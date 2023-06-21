@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+    <!-- css연결 -->
+    <link rel="stylesheet" href="/css/join.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    
+</head>
+<body>
+    <div id="container">
+        <div class="c1">
+            <div class="c1_top">
+                <div>
+                    <p>회원가입</p>
+                </div>
+                <a href="/"><img src="/img/join-log/join-log_img1.png" /></a>
+            </div>
+            <div class="c1_bot">
+                <div class="c1_bot_center">
+                    <div class="c1_bot_topText">
+                        <p class="c1_bot_topText_inner1">에프터 블로우의 뷰티 포인트 통합회원가입</p>
+                        <p class="c1_bot_topText_inner2">에프터 블로우 구매시 뷰티 포인트 적립이 자동으로 가능하며 
+                            에프터 블로우의 온/오프라인에서 모두 이용가능한 통합회원가입 창입니다.</p>
+                    </div>
+                    <form id="join_form" class="join_form" action="/joindb" method="post">
+                        <label for="membername">이름</label>
+                        <input type="text" for="membername" name="membername">
+                        <label for="membernum">휴대폰번호</label>
+                        <input type="number" for="membernum" name="membernum">
+                        <label for="memberid">아이디</label>
+                        <input type="text" name="memberid" placeholder="아이디를 입력해 주세요" />
+                        <label for="memberpass">비번</label>
+                        <input type="password" name="memberpass" placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)">
+                        <button class="c1_join" type="submit">회원가입</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

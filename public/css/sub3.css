@@ -1,0 +1,44 @@
+/* container */
+/* c1 */
+.c1 {  margin-top:170px; }
+.c1 .c1_center { width:95%;  margin:0 auto;   margin-top:90px; position:relative;}
+.c1 .c1_center .c1_right { width:200px; position:absolute; top:0; left:0; font-size:15px; line-height:30px;}
+.c1 .c1_center .c1_right .c1_gnb .c1GnbDepth1 > a{ color:#000;}
+.c1 .c1_center .c1_right .c1GnbDepth2 { height:150px; overflow:hidden; transition:all .5s; padding:10px 0;}
+.c1 .c1_center .c1_right .c1GnbDepth2.on {  height:0px; padding:0 0; }
+.c1 .c1_center .c1_right .c1GnbDepth2 > li > a { color:#555; font-size:14px; line-height:30px; padding-left:10px; }
+
+/* isotop 작업  */
+/* 이미지 작업 - 새로고침 여러번 클릭시 겹치는 현상은 왜 나타나는거지 : 이미지 양이 많아서 그렇데 */
+.c1 .c1_center .c1_left { margin-left:17%;}
+/* 버튼작업 */
+.c1 .c1_center .c1_left .c1_shopBtns { display:flex; margin-bottom:60px; }
+.c1 .c1_center .c1_left .c1_shopBtns li { margin-right:15px; }
+.c1 .c1_center .c1_left .c1_shopBtns li > a { color:#555; font-size:14px; }
+.c1 .c1_center .c1_left .c1_shopWrap {  width:100%; display:flex; justify-content:space-between; }
+.c1 .c1_center .c1_left .c1_shopWrap .all { margin:0px 20px;}
+.c1 .c1_center .c1_left .c1_shopWrap > div > a > img {  width: 320px; margin-bottom:35px; }
+
+/* 반응형 */
+@media screen and (max-width:1000px) { 
+  .c1 { margin-top:234px;}
+}
+
+
+@media screen and (max-width:640px) { 
+  /* container */
+  /* c1 */
+  .c1 { margin-top:170px; }
+  .c1 .c1_center { margin-top:206px;}
+  .c1 .c1_center .c1_right { width:200px; position:absolute; top:0; left:0; font-size:15px; line-height:30px;}
+  .c1 .c1_center .c1_right .c1_gnb .c1GnbDepth1 > a{ color:#000;}
+  .c1 .c1_center .c1_right .c1GnbDepth2 { height:150px; overflow:hidden; transition:all .5s; padding:10px 0;}
+  .c1 .c1_center .c1_right .c1GnbDepth2.on {  height:0px; padding:0 0; }
+  .c1 .c1_center .c1_right .c1GnbDepth2 > li > a { color:#555; font-size:14px; line-height:30px; padding-left:10px; }
+
+  /* isotop 작업  */
+  /* 이미지 작업 - 새로고침 여러번 클릭시 겹치는 현상은 왜 나타나는거지 : 이미지 양이 많아서 그렇데 */
+  .c1 .c1_center .c1_left { margin-left:31%;}
+  .c1 .c1_center .c1_left .c1_shopWrap > div > a > img {  width: 200px; margin-bottom:35px; }
+}  
+

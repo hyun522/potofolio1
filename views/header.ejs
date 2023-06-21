@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기프트</title>
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
+    <!-- 웹폰트 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
+    <!-- 초기화 -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!-- 반복문으로 서버 css 파일 연결! -->
+    <% if( cssFiles.length !== 0) { %>
+        <% for(let i = 0; i<cssFiles.length; i++ ) { %>
+            <link rel="stylesheet" href="/css/<%- cssFiles[i] %>">
+        <% } %>
+    <% } %>
+</head>
+
+<body>
+    <div id="header">
+        <!-- slider 구간 -->
+        <div class="h_slider">
+            <div class="wrap">
+                <a href="#"><img src="/img/header/line_bn1.jpg" /></a>
+                <a href="#"><img src="/img/header/line_bn2.jpg" /></a>
+                <a href="#"><img src="/img/header/line_bn3.jpg" /></a>
+            </div>
+        </div>
+        <div class="h_mainGnb">
+            <div class="h1_center">
+                <h1><a href="/">
+                        <img src="/img/header/logo.png" /></a></h1>
+                <ul class="depth1">
+                    <li>
+                        <a href="/sub1">기업소개</a>
+                        <div class="d2">
+                            <div class="d2_center">
+                                <ul class="depth2">
+                                    <li><a href="#">브랜드 스토리</a></li>
+                                    <li><a href="#">디자인</a></li>
+                                    <li><a href="#">채용</a></li>
+                                    <li><a href="#">문의하기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/sub2">매장안내</a>
+                        <div class="d2">
+                            <div class="d2_center">
+                                <ul class="depth2">
+                                    <li><a href="#">삼청동</a></li>
+                                    <li><a href="#">한남동</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/sub3">제품</a>
+                        <div class="d2">
+                            <div class="d2_center">
+                                <ul class="depth2">
+                                    <li><a href="#">향수</a></li>
+                                    <li><a href="#">바디&핸드</a></li>
+                                    <li><a href="#">캔들</a></li>
+                                    <li><a href="#">디퓨저</a></li>
+                                    <li><a href="#">룸 스프레이</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/sub4">기프트</a>
+                        <div class="d2">
+                            <div class="d2_center">
+                                <ul class="depth2">
+                                    <li><a href="#">감사와 존경</a></li>
+                                    <li><a href="#">축하와 환희</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/sub5">스파</a>
+                        <div class="d2">
+                            <div class="d2_center">
+                                <ul class="depth2">
+                                    <li><a href="#">스파 이름 미정</a></li>
+                                    <li><a href="#">스파 이름 미정2</a></li>
+                                    <li><a href="#">스파 이름 미정3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="h1_center_icon">
+                    <% if(login) { %>
+                        <a href="#"><%- login.memberid %>님</a>
+                        <a href="/logout">로그아웃</a>
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <% } else { %>
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/login"><i class="fa-regular fa-user"></i></a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>

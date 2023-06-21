@@ -1,0 +1,91 @@
+   <!-- header -->
+   <%- include("header.ejs" ,{cssFiles:["sub3.css"]})%>
+   <!-- container 구간 -->
+    <div id="container">
+        <div class="c1">
+            <div class="c1_center">
+                <div class="c1_right">
+                    <ul class="c1_gnb">
+                        <li class="c1GnbDepth1">
+                            <a href="#">ABOUT</a>
+                        </li>
+                        <li class="c1GnbDepth1 c1Click">
+                            <a href="#">SHOP</a>
+                            <ul class="c1GnbDepth2">
+                                <li><a href="#">- ALL</a></li>
+                                <li><a href="#">- Perfume</a></li>
+                                <li><a href="#">- HandCream</a></li>
+                                <li><a href="#">- Acc</a></li>
+                                <li><a href="#">- SCENT</a></li>
+                            </ul>
+                        </li>
+                        <li class="c1GnbDepth1">
+                            <a href="#">SCENT</a>
+                        </li>
+                        <li class="c1GnbDepth1">
+                            <a href="#">BOARD</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="c1_left">
+                    <!-- 메뉴를 눌럿을때 클래스 이름을 구분하기위한 장치 -->
+                    <ul class="c1_shopBtns">
+                        <li data-shop="*"><a href="#">ALL</a></li>
+                        <li data-shop=".Perfume"><a href="#">Perfume</a></li>
+                        <li data-shop=".HandCream"><a href="#">HandCream</a></li>
+                        <li data-shop=".Acc"><a href="#">Acc</a></li>
+                        <li data-shop=".Set"><a href="#">Set</a></li>
+                    </ul>
+                    <div class="c1_shopWrap">
+                        <div class="all Perfume">
+                            <a href="#"><img src="/img/sub3_cont/original/0.jpg" /></a>
+                        </div>
+                        <div class="all HandCream">
+                            <a href="#"><img src="/img/sub3_cont/original/1.jpg" /></a>
+                        </div>
+                        <div class="all Perfume">
+                            <a href="#"><img src="/img/sub3_cont/original/2.jpg" /></a>
+                        </div>
+                        <div class="all HandCream">
+                            <a href="#"><img src="/img/sub3_cont/original/3.jpg" /></a>
+                        </div>
+                        <div class="all Perfume">
+                            <a href="#"><img src="/img/sub3_cont/original/4.jpg" /></a>
+                        </div>
+                        <div class="all HandCream">
+                            <a href="#"><img src="/img/sub3_cont/original/5.jpg" /></a>
+                        </div>
+                        <div class="all Perfume">
+                            <a href="#"><img src="/img/sub3_cont/original/6.jpg" /></a>
+                        </div>
+                        <div class="all HandCream">
+                            <a href="#"><img src="/img/sub3_cont/original/7.jpg" /></a>
+                        </div>
+                        <div class="all Perfume">
+                            <a href="#"><img src="/img/sub3_cont/original/8.jpg" /></a>
+                        </div>
+                        <div class="all Acc">
+                            <a href="#"><img src="/img/sub3_cont/original/9.jpg" /></a>
+                        </div>
+                        <div class="all Acc">
+                            <a href="#"><img src="/img/sub3_cont/original/10.jpg" /></a>
+                        </div>
+                        <div class="all Set">
+                            <a href="#"><img src="/img/sub3_cont/original/11.jpg" /></a>
+                        </div>
+                        <div class="all Set">
+                            <a href="#"><img src="/img/sub3_cont/original/12.jpg" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <!-- footer -->
+    <%- include("footer.ejs",{jsFiles:["sub3.js","header.js"]}) %>
+
+</body>
+
+</html>

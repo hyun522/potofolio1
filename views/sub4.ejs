@@ -1,0 +1,89 @@
+<!-- header -->
+<%- include("header.ejs",{cssFiles:["sub4.css"]})%>
+<div id="container">
+    <div class="c1">
+        <div class="c1_center">
+            <div class="c1_left">
+                <div class="swiper mySwiper2" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" >
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/img/sub4_cont/c4_img1.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/img/sub4_cont/c4_img2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/img/sub4_cont/c4_img3.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/img/sub4_cont/c4_img1.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/img/sub4_cont/c4_img2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/img/sub4_cont/c4_img3.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c1_right">
+                <div class="c1_divide_1">
+                    <p><a href="#">6개의 후기보기</a></p>
+                </div>
+                <div class="c1_divide_2">
+                    <img src="/img/sub4_cont/c4_img3.jpg"> 
+                    <h2>감사와 존경</h2>
+                    <p>핸드크림 + 향수 2개입</p>
+                </div>
+                <div class="c1_divide_3">
+                    <p>￦ 52,000</p>
+                    <div class="c1_divide_3_one">
+                        <button class="c1_minus">-</button>
+                        <p class="c1_countN">1</p>
+                        <button class="c1_plus">+</button>
+                    </div>
+                </div>
+                <div class="c1_divide_4">
+                    <p class="c1_divide_4_one">총 합계 금액</p>
+                    <p class="c1_divide_4_two">￦ 52,000</p>
+                </div>
+                <div class="c1_divide_5">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <button>바로구매</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- SWIPER 연결 -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    });
+        var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+</script>
+<!-- footer  -->
+<%- include("footer.ejs",{jsFiles:["sub4.js","header.js"]}) %>
+</body>
+</html>
