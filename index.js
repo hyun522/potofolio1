@@ -80,8 +80,6 @@ passport.deserializeUser(function (memberid, done) {
 }); 
 
 
-
-
 // 라우터
 // 메인페이지
 app.get("/",function(req,res){
@@ -94,9 +92,9 @@ app.get("/sub1",function(req,res){
 });
 
 // 서브페이지2
-app.get("/sub2",function(req,res){
-    res.render("sub2.ejs",{login:req.user});
-});
+// app.get("/sub2",function(req,res){
+//     res.render("sub2.ejs",{login:req.user});
+// });
 // 서브페이지2
 app.get("/sub3",function(req,res){
     res.render("sub3.ejs",{login:req.user});
@@ -172,8 +170,44 @@ app.get("/logout",(req,res)=>{
         res.redirect("/")
     })
 })
-// 마이페이지 보여주는 경로
 
+//게시글 작성화면 페이지
+app.get("/insert",(req,res)=>{
+    res.render("find_insert.ejs");
+})
 
+//입력한 게시글 데이터 -> db에 저장처리
+app.post("/dbinsert",(req,res)=>{
+        db.collection("find").insertOne({
+            title:req.body.title,
+            address:req.body.address,
+            time:req.body.time
+        })
+})
 
+//게시글 목록 페이지
+app.get("/sub2",(req,res)=>{
+    db.collection("find").find().toArray((err,result)=>{
+    res.render("sub2.ejs",{data:result, text:"", login:req.user})
+    })
+})
 
+// 검색
+app.get("/search",(req,res)=>{
+    let check = [{
+        $search:{
+            index:"afterFind",
+            text:{
+                query:req.query.searchText,
+                path:"title"
+            }
+        }
+    },
+    ]
+
+    db.collection("find").aggregate(check).toArray((err,result)=>{
+        res.render("sub2.ejs",{data:result, text:req.query.searchText})
+                                                // 내가 검색창에 입력한것을 그대로 목록페이지에 보내주겠다!.
+    })
+})
+ 

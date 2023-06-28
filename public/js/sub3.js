@@ -24,11 +24,15 @@ c1Click.onclick = function(event){
 
 
  var elem = document.querySelector('.c1_shopWrap');
- var iso = new Isotope(elem, {
-     // options
-     itemSelector: '.all',
-     layoutMode: 'fitRows'
- });
+ var iso;
+ imagesLoaded(elem,function(){
+    iso = new Isotope(elem, {
+        // options
+        itemSelector: '.all',
+        layoutMode: 'fitRows'
+    });
+ })
+
 
      // element argument can be a selector string
      //   for an individual element

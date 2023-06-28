@@ -7,44 +7,36 @@
                     <div class="c1_left_topBox">
                         <h1>애프터블로우 매장 찾기</h1>
                     </div>
-                    <div class="c1_left_centBox">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input class="search" type="search" placeholder="위치 검색">
-                    </div>
+                    <!-- 검색을 위한 form태그 -->
+                    <form id="searchForm"  class="c1_left_centBox" action="/search" method="get">
+                                                                                            <!-- 검색기능은 get 방식 속도가 빨라서 -->
+                        <!-- <div class="c1_left_centBox"> -->
+                            <button id="searchBtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input id="searchText" name="searchText" class="search" type="text" placeholder="매장명 검색" value="<%- text %>" >
+                        <!-- </div> -->
+                    </form>
                     <div class="c1_left_botBox">
-                        <p>근처 매장: 15개</p>
-                        <button>필터</button>
+                        <p>총 매장: 4개</p>
+                        <!-- <button>필터</button> -->
                     </div>
                 </div>
+                   <!-- 데이터베이스에 있는 데이터값 만큼 목록을 생성-->
                 <div class="c1_left_box_bot">
                     <div class="c1_right_conts">
-                        <div class="c1_right_cont">
-                            <h3>에프터블로우 삼청점</h3>
-                            <p>서울 특별시 종로구 북촌로 5길 </p>
-                            <span>영업중</span>
-                            <span>"영업시간 11:00-20:00"</span>
-                        </div>
-                        <div class="c1_right_cont">
-                            <h3>에프터블로우 삼청 2호점</h3>
-                            <p>서울 특별시 종로구 삼청동 19582-1 </p>
-                            <span>영업중</span>
-                            <span>"영업시간 10:00-18:00"</span>
-                        </div>
-                        <div class="c1_right_cont">
-                            <h3>에프터블로우 한남동</h3>
-                            <p>서울 특별시 용산구 이태원로 7길 </p>
-                            <span>영업중</span>
-                            <span>"영업시간 13:00-22:00"</span>
-                        </div>
-                        <div class="c1_right_cont">
-                            <h3>에프터블로우 한남2호점</h3>
-                            <p>서울 용산구 이태원로 54길  </p>
-                            <span>영업중</span>
-                            <span>"영업시간 10:00-18:00"</span>
-                        </div>
+                        <% if(data.length > 0) { %>
+                            <% for(let i=0; i<data.length; i++) { %>
+                                <div class="c1_right_cont">
+                                    <h3><%- data[i].title %></h3>
+                                    <p><%- data[i].address %>"</p>
+                                    <span><%- data[i].time %></span>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <div class="c1_nothing">검색결과가 없습니다.</div>
+                        <% }%>
                     </div>
                     <div class="c1_right_contAll">
-                        <a href="#">모든 매장 보기</a>
+                        <a href="/sub2">모든 매장 보기</a>
                     </div>
                 </div>
             </div>
@@ -133,6 +125,30 @@
         };
     }
 
+    // 검색어 입력했으면 넘어가고 아니면 경고창 띄우기!
+    const searchForm = document.querySelector("#searchForm")
+    const inputText = document.querySelector("#searchText")
+    const searchBtn = document.querySelector("#searchBtn")
+
+    searchBtn.addEventListener("click",(event)=>{
+        event.preventDefault();
+        // 검색어 입력한 값을 가져오겠다
+        let data = inputText.value; 
+
+        let result = data.trim();
+        // 띄워쓰기가 있는건 앞뒤로 제거해줘
+      
+
+        //입력값이 없으면 넘어가지마 
+        if(result === ""){
+            alert("검색어 입력하세요")
+            event.preventDefault(); 
+        }
+        //입력값이 있으면 넘어가 /search 
+        else{
+            searchForm.submit();
+        }
+    })
 
 
     </script>

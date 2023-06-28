@@ -19,26 +19,95 @@
                 <a href="/"><img src="/img/join-log/join-log_img1.png" /></a>
             </div>
             <div class="c1_bot">
-                <div class="c1_bot_center">
+                <!-- <div class="c1_bot_center"> -->
                     <div class="c1_bot_topText">
                         <p class="c1_bot_topText_inner1">에프터 블로우의 뷰티 포인트 통합회원가입</p>
                         <p class="c1_bot_topText_inner2">에프터 블로우 구매시 뷰티 포인트 적립이 자동으로 가능하며 
                             에프터 블로우의 온/오프라인에서 모두 이용가능한 통합회원가입 창입니다.</p>
                     </div>
                     <form id="join_form" class="join_form" action="/joindb" method="post">
-                        <label for="membername">이름</label>
-                        <input type="text" for="membername" name="membername">
-                        <label for="membernum">휴대폰번호</label>
-                        <input type="number" for="membernum" name="membernum">
-                        <label for="memberid">아이디</label>
-                        <input type="text" name="memberid" placeholder="아이디를 입력해 주세요" />
-                        <label for="memberpass">비번</label>
-                        <input type="password" name="memberpass" placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)">
-                        <button class="c1_join" type="submit">회원가입</button>
+                        <div class="join_top">
+                            <label class="join_top_imfor join_imfor_title" for="membername">이름</label>
+                            <input class="join_top_imfor join_imfor_cont" type="text" for="membername" name="membername">
+                            <label class="join_top_imfor join_imfor_title"  for="membernum">휴대폰번호</label>
+                            <input class="join_top_imfor join_imfor_cont" type="tel" for="membernum" name="membernum">
+                            <label class="join_top_imfor join_imfor_title" for="memberbir">생년월일</label>
+                            <input class="join_top_imfor join_imfor_cont" type="date" for="memberbir" name="memberbir">
+                        </div>
+                        <!-- 아이디/비번 -->
+                        <label class="join_bot_logImfor join_logImfor_title" for="memberid">아이디</label>
+                        <input class="join_bot_logImfor join_logImfor_conts" type="text" name="memberid" placeholder="아이디를 입력해 주세요" />
+                        <label class="join_bot_logImfor join_logImfor_title" for="memberpass">비번</label>
+                        <input class="join_bot_logImfor join_logImfor_conts" type="password" name="memberpass" placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)">
+
+                        <!-- 이용약관 -->
+                        <div class="join_bot">
+                            <div class="form_control">
+                                <input type="checkbox" id="checkAll" class="checkAll_emo" name="checkAll">
+                                <label class="checkAll" for="checkAll">모든 약관 및 정보 수신 동의</label>
+                            </div>
+                            <div class="form_control">
+                                <h4>뷰디포인트 통합회원 약관</h4>
+                                <input type="checkbox" id="check1" class="checkLists_emo" name="check1" >
+                                <label class="checkLists" for="check1">[필수] 개인정보 제3자 제공 동의(에프터블로우)</label>
+                                <div class="able_box_back">
+                                    <div class="able_box">
+                                        <p>1. 개인정보를 제공하는 자 : 에프터 블로우</p>
+                                        <p>2. 개인정보를 제공하는 목적 : 에프터블로우사이트 회원가입 및 로그인, 포인트 적립/사용 </p>
+                                        <p>3. 제공하는 개인정보의 항목 : 성명,본인확인 값,생년월일,내/외국인여부,ID,PW,성별,휴대전화번호, 뷰티포인트 내역,(고객이 입력한 경우)이메일</p>
+                                        <button class="able_box_btn">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_control">
+                                <h4>에프터블로우 회원 약관</h4>
+                                <input type="checkbox" id="check2" class="checkLists_emo" name="check2">
+                                <label class="checkLists" for="check2">[필수] 애프터 블로우 서비스 이용약관</label>
+                                <div class="able_box_back">
+                                    <div class="able_box">
+                                        <div class="able_box_text">
+                                            <h3>서비스 이용약관</h3><br>
+                                            <h5>제 1조(목적)</h5>
+                                            <p>이 약관은 (주)에프터블로우(전자상거래 사업자, 이하 "회사")가 운영하는 에프터블로우 쇼핑몰(이하 "몰")
+                                                에서 제공하는 고객의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다. 
+                                            </p><br>
+                                            <h5>제 2조(정의)</h5>
+                                            <p>"몰"이란 회사가 재화 또는 용역(이하 "재화 등")의 판매등 고객에 대한 서비스를 제공하기 위하여 
+                                                컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말합니다
+                                            </p><br>
+                                            <h5>제 3조 (약간의 등의 명시와 설명 및 개정)</h5>
+                                            <p>회사는 이 약관의 내용과 상호 및 대표자 성명, 영없소 소재지 주소(고객의 불만을 처리할 수 있는 곳의 주소를 포함),
+                                                전화번호, 팩스전송번호,전자우편주소, 사업자 등록번호, 통신판매업신고번호, 개인정보 보호 책임자 등을 고객이 쉽게 알 수 있도록
+                                                몰의 초기화면에  게시합니다. 
+                                            </p>
+                                        </div>
+                                        <a class="able_box_btn" href="/join">닫기</a>
+                                    </div>
+                                </div>
+                                <input type="checkbox" id="check3" class="checkLists_emo" name="check3">
+                                <label class="checkLists" for="check3">[선택]개인정보 수집 및 이용 동의(마케팅)</label>
+                                <div class="able_box_back">
+                                    <div class="able_box">
+                                        <div class="able_box_text">
+                                            <h3>개인정보 수집/이용 동의</h3>
+                                            <p>회사는 이용자의 회원서비스 제공을 위하여 아래와 같이 개인정보를 수집 및 이용합니다.</p>
+                                            <p>※고객님께서는 개인정보 수집 및 이용(필수)동의에 거부할 수 있습니다. </p><br><br><br>
+                                            <p>단,거부할 경우 문의 서비스의 이용이 불가합니다. </p>
+                                        </div>
+                                        <a class="able_box_btn" href="/join">닫기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="join_btn">
+                            <a class="next" href="/">다음에하기</a>
+                            <button class="loging" type="submit">등록하고 로그인</button>
+                        </div>
                     </form>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
+    <script src="/js/join.js"></script>
 </body>
 </html>

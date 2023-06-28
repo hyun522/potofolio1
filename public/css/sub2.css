@@ -6,20 +6,21 @@
 .c1 .c1_left { width:33.333333%;}
 .c1 .c1_left .c1_left_box_top { padding:0 32px; border-bottom:1px solid #999;}
 .c1 .c1_left .c1_left_box_top .c1_left_topBox { color:#333; font-size:12px; margin:60px 0 36px  ; }
-.c1 .c1_left .c1_left_box_top .c1_left_centBox { position: relative;}
+.c1 .c1_left .c1_left_box_top .c1_left_centBox { position: relative; width:100%;}
 .c1 .c1_left .c1_left_box_top .c1_left_centBox .search {  display:block; 
-  width:100%; 
+  width:90%; 
   padding:15px 10px 15px 40px; 
   border-radius:10px;
   border:1px solid #000; outline:none;
   font-size:18px;
   color:#000;}
-.c1 .c1_left .c1_left_box_top .c1_left_centBox i { position:absolute; top:18px; left:10px;}
+.c1 .c1_left .c1_left_box_top .c1_left_centBox button { position:absolute; top:18px; left:15px; border:none; background-color:transparent;}
 .c1 .c1_left .c1_left_botBox { display:flex; justify-content:space-between; margin:16px 0; align-items:center; }
-.c1 .c1_left .c1_left_botBox p { font-size:14px; color:#777;  }
-.c1 .c1_left .c1_left_botBox button { width:100px; height:40px; border:1.5px solid #999; border-radius:20px; 
-              background-color:transparent; color:#000; font-size:14px; font-weight:bold; cursor: pointer;}
+.c1 .c1_left .c1_left_botBox p { font-size:14px; color:#777; margin:10px 0; }
+/* .c1 .c1_left .c1_left_botBox button { width:100px; height:40px; border:1.5px solid #999; border-radius:20px; 
+              background-color:transparent; color:#000; font-size:14px; font-weight:bold; cursor: pointer;} */
 .c1 .c1_left .c1_left_box_bot .c1_right_conts { height:100%; overflow-y:scroll; height:48vh; }
+.c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_nothing { text-align:center; line-height:48vh;} 
 .c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_right_cont { padding:40px 24px 40px 24px; color:#444; border-bottom:1px solid #999; }
 .c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_right_cont h3 { color:#333; font-size:18px;}
 .c1 .c1_left .c1_left_box_bot .c1_right_conts .c1_right_cont p { margin:15px 0 10px;  }
