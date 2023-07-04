@@ -1,5 +1,8 @@
 <!-- header -->
 <%- include("header.ejs",{cssFiles:["sub5.css"]})%>
+<!-- 숫자달기, 파일 확장자명 체크, 이미지 들어가게 하는법, 상세페이지 이동, 글수정
+=> 로그인 페이지 살리기 MAIN 동영상 화면 손보기 -->
+
 
 <div id="container">
     <div class="c1">
@@ -54,26 +57,60 @@
                 <div class="c1_tabTwo">
                     <div class="tabTwo_1">
                         <ul class="c1_tabTwo1_gnb">
-                            <li><a href="#"><img src="/img/sub5_cont/c5_review_1.jpg"></a></li>
-                            <li><a href="#"><img src="/img/sub5_cont/c5_review_2.jpg"></a></li>
-                            <li><a href="#"><img src="/img/sub5_cont/c5_review_3.jpg"></a></li>
-                            <li><a href="#"><img src="/img/sub5_cont/c5_review_4.jpg"></a></li>
-                            <li><a href="#"><img src="/img/sub5_cont/c5_review_1.jpg"></a></li>
-                            <li><a href="#"><img src="/img/sub5_cont/c5_review_2.jpg"></a></li>
+                            <% for(let i=0; i<data.length; i++){%>
+                                <li><a href="#"><img  src="/upload/<%- data[i].review %>"></a></li>
+                            <% } %>
+                            <!-- <li><a href="#"><img src="/img/sub5_cont/c5_review_2.jpg"></a></li> -->
+                            <!-- 총7개 -->
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <!-- <img src="/img/sub5_cont/c5_review_3.jpg"> -->
+                                        <!-- <div class="c1_bg"><p>더보기 +</p></div> -->
+                                    </a>
+                                </li>
+                        
                         </ul>
                     </div>
+            
                     <div class="tabTwo_2">
-                        <div class="tabTwo_2_leftBox">
-                            <i class="fa-solid fa-user"></i>
-                            <p>무미니</p>
+                        <% for(let i=0; i<data.length; i++){%>
+                            <div class="tabTwo_2_conts">
+                                <div class="tabTwo_2_leftBox">
+                                    <div style="display:none;"><%- data[i].num %></div>
+                                    <!--닉네임 이미지 -->
+                                    <img class="user" src="/upload/<%- data[i].thumbnail %>">
+                                    <!-- 닉네임 -->
+                                    <p><%- data[i].userName %></p>
+                                </div>
+                                <div class="tabTwo_2_rightBox">
+                                    <div class="tabTwo_2_rightBox_top">
+                                        <div class="tabTwo2_rightTop">
+                                            <!--평점-->
+                                            <img src="/img/sub5_cont/c5_star5.png"> 
+                                            <!-- 날짜 -->
+                                            <p class="date"><%- data[i].date %></p>
+                                        </div>
+                                        <div class="tabTwo2_rightCen">
+                                            <!-- 선택한 스파-->
+                                            <h3><%- data[i].userselect_2 %></h3>
+                                        </div>
+                                        <!-- 스파내용 -->
+                                        <p class="tabTwo2_rightBot">
+                                            <%- data[i].tabTwo2_rightBot %>
+                                        </p>
+                                    </div>
+                                    <div class="tabTwo_2_rightBox_bot">
+                                        <img  src="/upload/<%- data[i].review %>">
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <div class="writeReviewBox">
+                            <a class="writeReview" href="/review">리뷰작성하기</a>
                         </div>
-                        <div class="tabTwo_2_rightBox">
-                            <p>2023.06.01</p>
-                            <p>요새 핫한 에프터 블로우 스파에 100일 기념으로 여자친구와 다녀왔습니다. 
-                                여자친구가 너무 만족하네요. 여러 향 중에 향을 선택할 수 있어서 좋았고 
-                                마사지 해주시는 분들이 하나하나 신경써주셔서 너무 힐링했습니다.</p>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
                 <div class="c1_tabThree">
                     <h2>상품정보 제공고시</h2>

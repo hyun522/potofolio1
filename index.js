@@ -1,4 +1,5 @@
 const express = require("express");
+const multer  = require('multer')
 const MongoClient = require("mongodb").MongoClient;
 //데이터베이스의 데이터 입력,출력을 위한 함수명령어 불러들이는 작업
 const app = express();
@@ -105,10 +106,7 @@ app.get("/sub4",function(req,res){
     res.render("sub4.ejs",{login:req.user});
 });
 
-// 서브페이지5
-app.get("/sub5",function(req,res){
-    res.render("sub5.ejs",{login:req.user});
-});
+
 
 //다른 서브페이지들도 로그인되어있는 회원정보 데이터 보내야함
 //아직 미정
@@ -206,8 +204,68 @@ app.get("/search",(req,res)=>{
     ]
 
     db.collection("find").aggregate(check).toArray((err,result)=>{
-        res.render("sub2.ejs",{data:result, text:req.query.searchText})
+        res.render("sub2.ejs",{data:result, text:req.query.searchText,login:req.user})
                                                 // 내가 검색창에 입력한것을 그대로 목록페이지에 보내주겠다!.
     })
 })
  
+//review 입력 페이지 
+app.get("/review",(req,res)=>{
+    res.render("review_insert.ejs");
+})
+
+
+// 파일 첨부후 서버에 전달 할 때 multer library 설정
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/upload') //업로드 폴더 지정
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8'))
+      //영어가 아닌 다른 파일명 안깨지고 나오게 처리
+    }
+  })
+  const upload = multer({ storage: storage })
+  //upload는 위의 설정사항을 담은 변수(상수) 
+  
+
+
+
+//review 데이터베이스에 등록처리
+                                        //multer에 input두개 입력시 사용방법이 나와 있음
+                                        //multiple 속성을 안달아주면 굳이 최대값 설정할 필요가 없다!
+app.post("/dbReview",upload.fields([{ name: 'thumbnail'}, { name: 'review'}]),(req,res)=>{
+    // 두개일땐 무조건 files로 사용하기
+    // 데이터를 가져오면 꼭 console 창으로 검증을 해보기
+    // console.log(req.files["thumbnail"].filename)
+    // console.log(req.files["review"].filename)
+
+    db.collection("count").findOne({name:"리뷰게시글"},(err,countResult)=>{
+        db.collection("review").insertOne({
+            num:countResult.reviewCount,
+            // 닉네임
+            thumbnail:req.files["thumbnail"][0].filename,
+                                // 규칙이다 배열안에 하나만 있더라도 [0]으로 가져와야 한다!
+            userName:req.body.userName,
+            // 리뷰내용입력
+            userselect_1:req.body.userselect_1,
+            date:req.body.date,
+            userselect_2:req.body.userselect_2,
+            tabTwo2_rightBot:req.body.tabTwo2_rightBot,
+            // 리뷰 이미지 등록
+            review:req.files["review"][0].filename,
+        },(err,result)=>{
+            db.collection("count").updateOne({name:"리뷰게시글"},{$inc:{reviewCount:1}},(err,result)=>{
+                res.redirect(`/review/detail/${countResult.reviewCount}`)
+            })
+         })
+    })
+})
+
+
+// 서브페이지5 //리뷰목록페이지
+app.get("/sub5",function(req,res){
+    db.collection("review").find().sort({num:-1}).toArray((err,result)=>{
+        res.render("sub5.ejs",{data:result,login:req.user})
+    })
+});

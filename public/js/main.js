@@ -60,27 +60,36 @@ function h_open(){
 const c1_btnPrev = document.querySelector(".prev")
 const c1_btnNext = document.querySelector(".next")
 const c1_Slide = document.querySelector(".slide")
+const c1_img = document.querySelectorAll(".c1_boxs > img")
+
 
 sNumber = 0;
 
 c1_btnPrev.onclick = function(){
     if( sNumber === 0 ){
         sNumber = 0
+        c1_btnPrev.style.display = "none"
+        
     }
     else{
         sNumber = sNumber-1; 
+        
     }
-    c1_Slide.style.marginLeft= - sNumber * 280 + "px";
+    c1_Slide.style.marginLeft= - sNumber * 300 + "px";
+    c1_btnNext.style.display = "block"
 }
 
 c1_btnNext.onclick = function(){
-    if( sNumber === 4 ){
-        sNumber = 4;
+    if( sNumber === c1_img.length-5 ){
+        sNumber = c1_img.length-5;
+        c1_btnNext.style.display = "none"
+        
     }
     else{
         sNumber = sNumber+1; 
     }
-    c1_Slide.style.marginLeft= - sNumber * 280 + "px";
+    c1_Slide.style.marginLeft= - sNumber * 300 + "px";
+    c1_btnPrev.style.display = "block"
 }
 
 

@@ -54,11 +54,12 @@ z-index:10; border-bottom:1px solid #fff;}
 #container > div { height:80vh; display:flex; justify-content:center; align-items:center; }
 .c1 { position:relative;  }
 .c1 .c1_center {  width:1600px; margin:0 auto; }
-.c1 .c1_center .c1_top_box { margin:50px 0 50px 30px;; font-size:30px; font-weight:600;}           
-.c1 .c1_center .c1_bot_box  {    width:90%; overflow:hidden; margin:0 auto;}
+.c1 .c1_center .c1_top_box { margin:50px 0 50px 30px;; font-size:30px; font-weight:600;}         
+  /* 슬라이드 부분 */
+.c1 .c1_center .c1_bot_box  { width:1500px;  overflow:hidden; margin:0 auto; }
 .c1 .c1_center .c1_bot_box .slide { width:2520px; display:flex; transition:all .5s;}
 .c1 .c1_center .c1_bot_box .slide .c1_boxs { text-align:center; }
-.c1 .c1_center .c1_bot_box img { width:270px; margin-bottom:20px; padding:0 5px; margin-right:10px; }
+.c1 .c1_center .c1_bot_box img { width:270px; margin-bottom:20px; padding:0 15px;  }
 .c1 .c1_center .c1_bot_box .btns > div > i {  padding:20px 25px; background-color:rgba(0,0,0,.8);
    display:flex; justify-content:center; align-items:center;
     position:absolute; top:57%; transform:translateY(-57%); 
